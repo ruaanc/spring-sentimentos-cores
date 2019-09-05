@@ -11,13 +11,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	    @Override
 	    public void configure(HttpSecurity http) throws Exception {
 	       http.csrf().disable().authorizeRequests()
-	        .antMatchers("/usuarios").permitAll()
-	        .antMatchers(HttpMethod.POST,"/usuarios").permitAll()
-	        .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
-	        .antMatchers(HttpMethod.POST,"/usuarios/{id}").permitAll()
-	        .antMatchers(HttpMethod.GET,"/usuarios/*").permitAll()
-	         .antMatchers(HttpMethod.GET,"/usuarios").permitAll()
-	         .antMatchers(HttpMethod.PUT,"/usuarios/*").permitAll().anyRequest().authenticated();
+	        .antMatchers("/dados").permitAll()
+	        .antMatchers(HttpMethod.POST,"/dados").permitAll()
+	        .antMatchers(HttpMethod.POST, "/dados").permitAll()
+	        .antMatchers(HttpMethod.POST,"/dados/{id}").permitAll()
+	        .antMatchers(HttpMethod.GET,"/dados/*").permitAll()
+	         .antMatchers(HttpMethod.GET,"/dados").permitAll()
+	         .antMatchers(HttpMethod.PUT,"/dados/*").permitAll().anyRequest().authenticated();
 	    }
 
 }
