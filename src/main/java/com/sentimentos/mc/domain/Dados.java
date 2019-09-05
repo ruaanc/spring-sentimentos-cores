@@ -1,8 +1,6 @@
 package com.sentimentos.mc.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,12 +21,6 @@ public class Dados implements Serializable {
 	private String sexo;
 	@Column
 	private String corPreferida;
-	@Column
-	private List<String> sentimentosVermelho = new ArrayList<>();
-	@Column
-	private List<String> sentimentosVerde = new ArrayList<>();
-	@Column
-	private List<String> sentimentosAzul = new ArrayList<>();
 	
 	public Dados() {
 	}
@@ -69,30 +61,6 @@ public class Dados implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public List<String> getSentimentosVermelho() {
-		return sentimentosVermelho;
-	}
-
-	public void setSentimentosVermelho(List<String> sentimentosVermelho) {
-		this.sentimentosVermelho = sentimentosVermelho;
-	}
-
-	public List<String> getSentimentosVerde() {
-		return sentimentosVerde;
-	}
-
-	public void setSentimentosVerde(List<String> sentimentosVerde) {
-		this.sentimentosVerde = sentimentosVerde;
-	}
-
-	public List<String> getSentimentosAzul() {
-		return sentimentosAzul;
-	}
-
-	public void setSentimentosAzul(List<String> sentimentosAzul) {
-		this.sentimentosAzul = sentimentosAzul;
 	}
 
 }

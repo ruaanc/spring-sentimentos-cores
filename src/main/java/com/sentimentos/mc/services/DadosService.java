@@ -3,12 +3,13 @@ package com.sentimentos.mc.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 
 import com.sentimentos.mc.domain.Dados;
 import com.sentimentos.mc.repository.DadosRepository;
 import com.sentimentos.mc.services.exception.ObjectNotFoundException;
 
+@Service
 public class DadosService {
 	
 	@Autowired
