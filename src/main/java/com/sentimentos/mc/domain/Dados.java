@@ -1,12 +1,15 @@
 package com.sentimentos.mc.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Dados implements Serializable {
@@ -21,6 +24,9 @@ public class Dados implements Serializable {
 	private String sexo;
 	@Column
 	private String corPreferida;
+	
+	@OneToMany(mappedBy="sentimento")
+	private List<Sentimento> sentimentos = new ArrayList<Sentimento>();
 	
 	public Dados() {
 	}
@@ -61,6 +67,14 @@ public class Dados implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public List<Sentimento> getSentimentos() {
+		return sentimentos;
+	}
+
+	public void setSentimentos(List<Sentimento> sentimentos) {
+		this.sentimentos = sentimentos;
 	}
 
 }
