@@ -17,7 +17,17 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .antMatchers(HttpMethod.POST,"/dados/{id}").permitAll()
 	        .antMatchers(HttpMethod.GET,"/dados/*").permitAll()
 	         .antMatchers(HttpMethod.GET,"/dados").permitAll()
+		        .antMatchers("/cores").permitAll()
+		        .antMatchers(HttpMethod.POST,"/cores").permitAll()
+		        .antMatchers(HttpMethod.POST, "/cores").permitAll()
+		        .antMatchers(HttpMethod.POST,"/cores/{id}").permitAll()
+		        .antMatchers(HttpMethod.GET,"/cores/*").permitAll()
+		         .antMatchers(HttpMethod.GET,"/cores").permitAll()
+		         .antMatchers(HttpMethod.PUT,"/cores/*").permitAll()
 	         .antMatchers(HttpMethod.PUT,"/dados/*").permitAll().anyRequest().authenticated();
+	       
+
+	       	
 	    }
 
 }

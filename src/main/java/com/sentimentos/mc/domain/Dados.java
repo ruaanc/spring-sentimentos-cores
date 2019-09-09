@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
 
 @Entity
 public class Dados implements Serializable {
@@ -25,9 +28,11 @@ public class Dados implements Serializable {
 	@Column
 	private String corPreferida;
 	
-	@OneToMany(mappedBy="sentimento")
-	private List<Sentimento> sentimentos = new ArrayList<Sentimento>();
-	
+	@OneToMany(cascade = CascadeType.ALL,
+	            fetch = FetchType.LAZY,
+	            mappedBy = "dados")
+	private List<Cor> cores = new ArrayList<>();
+
 	public Dados() {
 	}
 	
@@ -69,12 +74,12 @@ public class Dados implements Serializable {
 		this.id = id;
 	}
 
-	public List<Sentimento> getSentimentos() {
-		return sentimentos;
+	public List<Cor> getCores() {
+		return cores;
 	}
 
-	public void setSentimentos(List<Sentimento> sentimentos) {
-		this.sentimentos = sentimentos;
+	public void setCores(List<Cor> cores) {
+		this.cores = cores;
 	}
-
+	
 }
